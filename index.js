@@ -2806,3 +2806,22 @@
 // });
 
 
+// my woork 
+
+// const fun2 = () => {
+//     setTimeout(()=> {
+//         console.log('Fun 2 is called')    
+//     },2000)
+// }
+// const fun3 = () => {
+//     setTimeout(()=> {
+//         console.log('Fun 3 is called')    
+//     },1000)
+// }
+// const fun1 = () => {
+//     console.log("Fun 1 is called")
+//     fun2()
+//     fun3()
+//     console.log("Again Fun1 is called")
+// }
+// fun1()
