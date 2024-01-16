@@ -71,12 +71,23 @@ function checkWinner(){
         statusText.classList.add('winner')
         document.body.classList.add('cong');
         for(let i = 0; i < options.length; i++){
-            if (options[i] == 'O'){
-                boxs.forEach((e) => {
-                    if (e.dataset.index == i){
-                        e.classList.add('Lost');
-                    }
-                })
+            if (player == 'X'){
+                if (options[i] == 'O'){
+                    boxs.forEach((e) => {
+                        if (e.dataset.index == i){
+                            e.classList.add('Lost');
+                        }
+                    })
+                }
+            }
+            else{
+                if (options[i] == 'X'){
+                    boxs.forEach((e) => {
+                        if (e.dataset.index == i){
+                            e.classList.add('Lost');
+                        }
+                    })
+                }
             }
         }
         running = false;
