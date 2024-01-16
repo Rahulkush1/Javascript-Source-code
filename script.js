@@ -3,6 +3,7 @@ const statusText=document.querySelector('#status');
 const restart=document.querySelector('#restart');
 let x="<img src='images/x.png' width='50px' height='50px' />";
 let o="<img src='images/o.png' width='50px' height='50px' />";
+
 const win=[
     [0,1,2],
     [3,4,5],
