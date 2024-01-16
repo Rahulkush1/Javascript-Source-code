@@ -1,8 +1,8 @@
 const boxs = document.querySelectorAll('.box');
 const statusText=document.querySelector('#status');
 const restart=document.querySelector('#restart');
-let x="<img src='x.png' width='50px' height='50px' />";
-let o="<img src='o.png' width='50px' height='50px' />";
+let x="<img src='images/x.png' width='50px' height='50px' />";
+let o="<img src='images/o.png' width='50px' height='50px' />";
 const win=[
     [0,1,2],
     [3,4,5],
@@ -71,12 +71,23 @@ function checkWinner(){
         statusText.classList.add('winner')
         document.body.classList.add('cong');
         for(let i = 0; i < options.length; i++){
-            if (options[i] == 'O'){
-                boxs.forEach((e) => {
-                    if (e.dataset.index == i){
-                        e.classList.add('Lost');
-                    }
-                })
+            if (player == 'X'){
+                if (options[i] == 'O'){
+                    boxs.forEach((e) => {
+                        if (e.dataset.index == i){
+                            e.classList.add('Lost');
+                        }
+                    })
+                }
+            }
+            else{
+                if (options[i] == 'X'){
+                    boxs.forEach((e) => {
+                        if (e.dataset.index == i){
+                            e.classList.add('Lost');
+                        }
+                    })
+                }
             }
         }
         running = false;
@@ -103,6 +114,8 @@ function restartGame(){
         box.classList.remove('Lost');
         box.classList.remove('winner');
         document.body.classList.remove('cong');
+        statusText.classList.remove('winner')
+
     });
 }
 
